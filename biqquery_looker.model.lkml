@@ -30,7 +30,7 @@ named_value_format: K_2D {
 explore: kpi_fact_ar_aging_p1 {
   conditionally_filter: {
     filters: {
-      field: DATE_date
+      field: PARTITION
       value: "yesterday"
 
     }

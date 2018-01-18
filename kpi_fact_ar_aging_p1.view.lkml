@@ -1,20 +1,11 @@
 view: kpi_fact_ar_aging_p1 {
   sql_table_name: Looker_AR_Data.KPI_FACT_AR_AGING_P1 ;;
 
-  dimension_group: DATE {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}._PARTITIONTIME ;;
-  }
+dimension: PARTITION
+{
+  type:  date
+  sql: ${TABLE}._PARTITIONTIME ;;
+}
 
   dimension: ar01_15 {
     type: number
