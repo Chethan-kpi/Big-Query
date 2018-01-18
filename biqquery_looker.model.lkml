@@ -27,6 +27,15 @@ named_value_format: K_2D {
   value_format: "0.00,\" K\""
 }
 
+explore: kpi_fact_ar_aging_p1 {
+  conditionally_filter: {
+    filters: {
+      field: DATE_date
+      value: "yesterday"
+
+    }
+  }
+}
 explore: kpi_fact_ar_aging  {
 
   label: "AR Aging"
