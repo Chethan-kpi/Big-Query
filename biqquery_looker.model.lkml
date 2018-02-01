@@ -27,15 +27,27 @@ named_value_format: K_2D {
   value_format: "0.00,\" K\""
 }
 
-explore: kpi_fact_ar_aging_p1 {
-  conditionally_filter: {
-    filters: {
-      field: PARTITION
-      value: "yesterday"
+# explore: kpi_fact_ar_aging_p1 {
+#   conditionally_filter: {
+#     filters: {
+#      field: PARTITION
+#       value: "yesterday"
+#
+#     }
+#   }
+# }
 
-    }
-  }
+explore: kpi_rt_ar_journal_entries {
+  label: "FT_AR_Journals"
 }
+explore: kpi_rt_trx_reg {
+  label: "FT_Receivable Transaction Register"
+}
+explore: kpi_rt_unappunres_reg {
+  label: "FT_Unapplied Receipts Register"
+}
+
+
 explore: kpi_fact_ar_aging  {
 
   label: "AR Aging"
