@@ -6,8 +6,8 @@ view: kpi_rt_unappunres_reg {
     sql: ${TABLE}.BATCH_NAME ;;
   }
 
-  dimension: claim_amount {
-    type: number
+  measure: claim_amount {
+    type: sum
     sql: ${TABLE}.CLAIM_AMOUNT ;;
   }
 
@@ -81,8 +81,8 @@ view: kpi_rt_unappunres_reg {
     sql: ${TABLE}.METRIC_COLS_BEGIN ;;
   }
 
-  dimension: onaccount_amount {
-    type: number
+  measure: onaccount_amount {
+    type: sum
     sql: ${TABLE}.ONACCOUNT_AMOUNT ;;
   }
 
@@ -101,8 +101,8 @@ view: kpi_rt_unappunres_reg {
     sql: ${TABLE}.PAYMENT_NUMBER ;;
   }
 
-  dimension: prepayment_amount {
-    type: number
+  measure: prepayment_amount {
+    type: sum
     sql: ${TABLE}.PREPAYMENT_AMOUNT ;;
   }
 
@@ -116,8 +116,8 @@ view: kpi_rt_unappunres_reg {
     sql: ${TABLE}.STATUS ;;
   }
 
-  dimension: total_amount {
-    type: number
+  measure: total_amount {
+    type: sum
     sql: ${TABLE}.TOTAL_AMOUNT ;;
   }
 
@@ -126,8 +126,8 @@ view: kpi_rt_unappunres_reg {
     sql: ${TABLE}.TRANSACTIONAL_CURRENCY_CODE ;;
   }
 
-  dimension: unapplied_amount {
-    type: number
+  measure: unapplied_amount {
+    type: sum
     sql: ${TABLE}.UNAPPLIED_AMOUNT ;;
   }
 
