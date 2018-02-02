@@ -202,14 +202,6 @@ explore: kpi_fact_ar_transactions  {
 explore: kpi_fact_late_payments  {
   label: "DM_AR Late Payments"
 
-  # conditionally_filter: {
-  #   filters:  {
-  #     field:aging_derived.DUE_DATE
-  #     value: "before 2 years ago"
-  #   }
-  #   unless: [aging_derived.DUE_DAYS ]
-  # }
-
   join:kpi_dim_op_units  {
     sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_late_payments.op_unit_id} ;;
     relationship: many_to_one
@@ -230,6 +222,69 @@ explore: kpi_fact_late_payments  {
 
 }
 
+explore: kpi_fact_ar_adjustments  {
+  label: "DM_AR Adjustments"
+
+
+  join:  kpi_dim_bill_to_customers {
+    sql_on: ${kpi_dim_bill_to_customers.site_use_id}=${kpi_fact_ar_adjustments.bill_to_site_use_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Bill To Customers"
+  }
+
+  join: kpi_dim_currency {
+    sql_on: ${kpi_dim_currency.string_field_0}=${kpi_fact_ar_adjustments.invoice_currency_code} ;;
+    relationship: many_to_one
+    view_label: "DIM : Currency"
+  }
+
+  join: kpi_dim_cust_trx_id {
+    sql_on: ${kpi_dim_cust_trx_id.customer_trx_id}=${kpi_fact_ar_adjustments.customer_trx_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Customer TRX ID"
+  }
+
+  join: kpi_dim_gl_code_combinations {
+    sql_on: ${kpi_dim_gl_code_combinations.code_combination_id}=${kpi_fact_ar_adjustments.code_combination_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : GL Code Combinations"
+  }
+
+  join: kpi_dim_op_units {
+    sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_ar_adjustments.org_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Operating Units"
+  }
+
+  join: kpi_dim_salesreps {
+    sql_on:${kpi_dim_salesreps.salesrep_org_id}=${kpi_fact_ar_adjustments.salesrep_org_id};;
+    relationship: many_to_one
+    view_label: "DIM : Sales Reps"
+  }
+
+  join: kpi_dim_ar_adj_approver {
+    sql_on: ${kpi_dim_ar_adj_approver.user_id}=${kpi_fact_ar_adjustments.approved_by} ;;
+    relationship: many_to_one
+    view_label: "DIM : ADJ Approver"
+  }
+  join: kpi_dim_ar_trx_types {
+    sql_on: ${kpi_dim_ar_trx_types.cust_trx_type_id}=${kpi_fact_ar_adjustments.cust_trx_type_id}
+      and ${kpi_dim_ar_trx_types.org_id}=${kpi_fact_ar_adjustments.org_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Transaction Types"
+  }
+  join: kpi_dim_created_by {
+    sql_on: ${kpi_dim_created_by.user_id}=${kpi_fact_ar_adjustments.created_by} ;;
+    relationship: many_to_one
+    view_label: "DIM : Created By"
+  }
+  join: kpi_dim_set_of_books {
+    sql_on: ${kpi_dim_set_of_books.set_of_books_id}=${kpi_fact_ar_adjustments.set_of_books_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Set of Books"
+  }
+
+}
 
 # explore: kpi_dim_bill_to_accounts {}
 

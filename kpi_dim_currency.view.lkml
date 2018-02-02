@@ -4,7 +4,7 @@ view: kpi_dim_currency {
 
   dimension: string_field_0 {
     type: string
-    sql: ${TABLE}.string_field_0 ;;
+    sql: ${TABLE}.currency_code ;;
     label: "Currency"
   }
 
