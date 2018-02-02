@@ -199,6 +199,36 @@ explore: kpi_fact_ar_transactions  {
   }
 
  }
+explore: kpi_fact_late_payments  {
+  label: "DM_AR Late Payments"
+
+  # conditionally_filter: {
+  #   filters:  {
+  #     field:aging_derived.DUE_DATE
+  #     value: "before 2 years ago"
+  #   }
+  #   unless: [aging_derived.DUE_DAYS ]
+  # }
+
+  join:kpi_dim_op_units  {
+    sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_late_payments.op_unit_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Operating Units"
+  }
+  join: kpi_dim_currency {
+    sql_on: ${kpi_dim_currency.string_field_0}=${kpi_fact_late_payments.invoice_currency} ;;
+    relationship: many_to_one
+    view_label: "DIM : Currency"
+  }
+
+  join:  kpi_dim_bill_to_customers {
+    sql_on: ${kpi_dim_bill_to_customers.site_use_id}=${kpi_fact_late_payments.customer_site_use_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Bill To Customers"
+  }
+
+
+}
 
 
 # explore: kpi_dim_bill_to_accounts {}
