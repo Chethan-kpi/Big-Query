@@ -286,6 +286,47 @@ explore: kpi_fact_ar_adjustments  {
 
 }
 
+explore: kpi_fact_ar_applications  {
+  label: "DM_AR Applications"
+
+
+  join:  kpi_dim_bill_to_customers {
+    sql_on: ${kpi_dim_bill_to_customers.site_use_id}=${kpi_fact_ar_applications.bill_to_site_use_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Bill To Customers"
+  }
+
+  join: kpi_dim_currency {
+    sql_on: ${kpi_dim_currency.string_field_0}=${kpi_fact_ar_applications.invoice_currency_code} ;;
+    relationship: many_to_one
+    view_label: "DIM : Currency"
+  }
+
+  join: kpi_dim_cust_trx_id {
+    sql_on: ${kpi_dim_cust_trx_id.customer_trx_id}=${kpi_fact_ar_applications.applied_customer_trx_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Customer TRX ID"
+  }
+
+  join: kpi_dim_gl_code_combinations {
+    sql_on: ${kpi_dim_gl_code_combinations.code_combination_id}=${kpi_fact_ar_applications.code_combination_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : GL Code Combinations"
+  }
+
+  join: kpi_dim_op_units {
+    sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_ar_applications.org_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Operating Units"
+  }
+
+  join: kpi_dim_set_of_books {
+    sql_on: ${kpi_dim_set_of_books.set_of_books_id}=${kpi_fact_ar_applications.set_of_books_id} ;;
+    relationship: many_to_one
+    view_label: "DIM : Set of Books"
+  }
+
+}
 # explore: kpi_dim_bill_to_accounts {}
 
 # explore: kpi_dim_bill_to_contacts {}
