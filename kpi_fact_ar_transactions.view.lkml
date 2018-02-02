@@ -1,4 +1,5 @@
 view: kpi_fact_ar_transactions {
+  label: "FACT: AR Transactions"
   sql_table_name: Looker_AR_Data.KPI_Fact_AR_TRANSACTIONS ;;
 
 
