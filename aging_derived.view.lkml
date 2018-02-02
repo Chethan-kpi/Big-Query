@@ -1,5 +1,5 @@
 view: aging_derived {
-parameter: test {
+  parameter: test {
   type: string
 }
   derived_table: {
