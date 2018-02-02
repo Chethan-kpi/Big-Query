@@ -1,5 +1,5 @@
 view: aging_derived {
-  label: "kpi_fact_ar_aging"
+  label: "FACT : AR Aging"
   parameter: test {
   type: string
 }
