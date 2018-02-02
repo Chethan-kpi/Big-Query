@@ -1,4 +1,5 @@
 view: kpi_fact_ar_applications {
+  label: "FACT : AR Applications"
   sql_table_name: KPI_ANALYTICS.KPI_Fact_AR_APPLICATIONS ;;
 
   dimension: amount {

@@ -1,4 +1,5 @@
 view: kpi_fact_late_payments {
+  label: "FACT : AR Late Payments"
   sql_table_name: KPI_ANALYTICS.KPI_Fact_LATE_PAYMENTS ;;
 
   dimension: amount_applied {

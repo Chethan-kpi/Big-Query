@@ -1,4 +1,5 @@
 view: kpi_fact_ar_adjustments {
+  label: "FACT: AR Adjustments"
   sql_table_name: KPI_ANALYTICS.KPI_Fact_AR_ADJUSTMENTS ;;
 
   dimension_group: adj_apply {
