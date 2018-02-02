@@ -1,5 +1,5 @@
 connection: "bigquery"
-label : "BigQuery DM"
+label : "KPI BigQuery DM"
 # include all the views
 include: "*.view"
 
@@ -41,7 +41,7 @@ named_value_format: K_2D {
 explore: kpi_fact_ar_aging  {
 
 hidden: yes
-  label: "DM_AR Aging"
+  label: "AR Aging Star"
   join:kpi_dim_op_units  {
     sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_ar_aging.org_id} ;;
     relationship: many_to_one
@@ -65,7 +65,7 @@ hidden: yes
 }
 
 explore: aging_derived  {
-  label: "DM_AR Aging"
+  label: "AR Aging Star"
 
   # conditionally_filter: {
   #   filters:  {
@@ -98,7 +98,7 @@ explore: aging_derived  {
 }
 
 explore: kpi_fact_ar_transactions  {
-  label: "DM_AR Transactions"
+  label: "AR Transactions Star"
 
 
   join:kpi_dim_bill_to_accounts  {
@@ -200,7 +200,7 @@ explore: kpi_fact_ar_transactions  {
 
  }
 explore: kpi_fact_late_payments  {
-  label: "DM_AR Late Payments"
+  label: "AR Late Payments Star"
 
   join:kpi_dim_op_units  {
     sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_late_payments.op_unit_id} ;;
@@ -223,7 +223,7 @@ explore: kpi_fact_late_payments  {
 }
 
 explore: kpi_fact_ar_adjustments  {
-  label: "DM_AR Adjustments"
+  label: "AR Adjustments Star"
 
 
   join:  kpi_dim_bill_to_customers {
@@ -287,7 +287,7 @@ explore: kpi_fact_ar_adjustments  {
 }
 
 explore: kpi_fact_ar_applications  {
-  label: "DM_AR Applications"
+  label: "AR Applications Star"
 
 
   join:  kpi_dim_bill_to_customers {
