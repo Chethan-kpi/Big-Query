@@ -40,6 +40,7 @@ named_value_format: K_2D {
 
 explore: kpi_fact_ar_aging  {
 
+hidden: yes
   label: "DM_AR Aging"
   join:kpi_dim_op_units  {
     sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_ar_aging.org_id} ;;
