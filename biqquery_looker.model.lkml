@@ -1,5 +1,5 @@
 connection: "bigquery"
-label : "Big Query Data Mart"
+label : "BigQuery DM"
 # include all the views
 include: "*.view"
 
