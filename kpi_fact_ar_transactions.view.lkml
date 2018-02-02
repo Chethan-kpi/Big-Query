@@ -206,7 +206,7 @@ view: kpi_fact_ar_transactions {
   measure: trx_currency_amount {
     type: sum
     sql: ${TABLE}.TRX_CURRENCY_AMOUNT ;;
-    value_format_name: K_2D
+    value_format_name: usd_millions
     drill_fields: [Detail*]
   }
 
