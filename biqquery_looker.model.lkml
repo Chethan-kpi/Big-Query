@@ -66,13 +66,13 @@ explore: kpi_fact_ar_aging  {
 explore: aging_derived  {
   label: "DM_AR Aging Custom"
 
-  conditionally_filter: {
-    filters:  {
-      field:aging_derived.DUE_DATE
-      value: "before 2 years ago"
-    }
-    unless: [aging_derived.DUE_DAYS ]
-  }
+  # conditionally_filter: {
+  #   filters:  {
+  #     field:aging_derived.DUE_DATE
+  #     value: "before 2 years ago"
+  #   }
+  #   unless: [aging_derived.DUE_DAYS ]
+  # }
 
   join:kpi_dim_op_units  {
     sql_on: ${kpi_dim_op_units.organization_id}=${aging_derived.ORG_ID} ;;
