@@ -65,7 +65,7 @@ hidden: yes
 }
 
 explore: aging_derived  {
-  label: "DM_AR Aging Custom"
+  label: "DM_AR Aging"
 
   # conditionally_filter: {
   #   filters:  {
