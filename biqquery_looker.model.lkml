@@ -40,7 +40,7 @@ named_value_format: K_2D {
 
 explore: kpi_fact_ar_aging  {
 
-  label: "DM AR Aging"
+  label: "DM_AR Aging"
   join:kpi_dim_op_units  {
     sql_on: ${kpi_dim_op_units.organization_id}=${kpi_fact_ar_aging.org_id} ;;
     relationship: many_to_one
@@ -64,7 +64,7 @@ explore: kpi_fact_ar_aging  {
 }
 
 explore: aging_derived  {
-  label: "DM AR Aging Custom"
+  label: "DM_AR Aging Custom"
 
   conditionally_filter: {
     filters:  {
@@ -97,7 +97,7 @@ explore: aging_derived  {
 }
 
 explore: kpi_fact_ar_transactions  {
-  label: "DM AR Transactions"
+  label: "DM_AR Transactions"
 
 
   join:kpi_dim_bill_to_accounts  {
