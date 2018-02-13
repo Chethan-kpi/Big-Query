@@ -129,21 +129,26 @@ view: aging_derived {
   dimension: USD_CURRENT_AR{
 
     type:  number
+    label: "Open Balance"
   }  dimension: USD_AR0_15{
 
     type:  number
   }  dimension: USD_AR16_30{
 
     type:  number
+    label: "Over 15 Days"
   }  dimension: USD_AR31_60{
 
     type:  number
+    label: "Over 30 Days"
   }  dimension: USD_AR61_90{
 
     type:  number
+    label: "Over 60 Days"
   }  dimension: USD_90_PLUS{
 
     type:  number
+    label: "Over 90 Days"
   }
   dimension: CURRENCY {
     type: string
