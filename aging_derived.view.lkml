@@ -118,7 +118,7 @@ view: aging_derived {
   measure:Total_Aging  {
     type: sum
     sql: ${AR0_15}+${AR16_30}+${AR31_60}+${AR61_90}+${AR90_PLUS} ;;
-    value_format_name: "K_2D"
+    value_format_name: usd
   }
 
 
@@ -129,25 +129,31 @@ view: aging_derived {
   dimension: USD_CURRENT_AR{
 
     type:  number
+    value_format_name: usd
     label: "Open Balance"
   }  dimension: USD_AR0_15{
 
     type:  number
+    value_format_name: usd
   }  dimension: USD_AR16_30{
 
     type:  number
+    value_format_name: usd
     label: "Over 15 Days"
   }  dimension: USD_AR31_60{
 
     type:  number
+    value_format_name: usd
     label: "Over 30 Days"
   }  dimension: USD_AR61_90{
 
     type:  number
+    value_format_name: usd
     label: "Over 60 Days"
   }  dimension: USD_90_PLUS{
 
     type:  number
+    value_format_name: usd
     label: "Over 90 Days"
   }
   dimension: CURRENCY {
