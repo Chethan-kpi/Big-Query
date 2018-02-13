@@ -74,15 +74,20 @@ view: aging_derived {
   measure: 0_15 {
     type: sum
     sql: ${TABLE}.AR0_15 ;;
+    value_format_name: usd
+    label: "Upto 15 Days"
   }
   dimension: AR16_30{
 
     type:  number
+
   }
 
   measure: 16_30 {
     type: sum
     sql: ${TABLE}.AR16_30 ;;
+    value_format_name: usd
+    label: "Over 15 Days"
   }
 
   dimension: AR31_60{
@@ -93,6 +98,8 @@ view: aging_derived {
   measure: 31_60 {
     type: sum
     sql: ${TABLE}.AR31_60 ;;
+    value_format_name: usd
+    label: "Over 30 Days"
   }
 
 
@@ -104,6 +111,8 @@ view: aging_derived {
   measure: 61_90 {
     type: sum
     sql: ${TABLE}.AR61_90 ;;
+    value_format_name: usd
+    label: "Over 60 Days"
   }
   dimension: AR90_PLUS{
 
@@ -113,6 +122,8 @@ view: aging_derived {
   measure: 90PLUS {
     type: sum
     sql: ${TABLE}.AR90_PLUS ;;
+    value_format_name: usd
+    label: "Over 90 Days"
   }
 
   measure:Total_Aging  {
