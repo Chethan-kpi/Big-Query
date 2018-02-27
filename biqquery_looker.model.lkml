@@ -100,7 +100,10 @@ explore: aging_derived  {
 explore: kpi_fact_ar_transactions  {
   label: "AR Transactions Star"
 
-
+access_filter: {
+  field: ledger_id
+  user_attribute: ledger_id
+}
   join:kpi_dim_bill_to_accounts  {
     sql_on: ${kpi_dim_bill_to_accounts.cust_account_id}=${kpi_fact_ar_transactions.bill_to_customer_id} ;;
     relationship: many_to_one
